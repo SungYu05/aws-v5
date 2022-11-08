@@ -7,7 +7,7 @@ on:
 # actions/setup-java@v2는 사용자 정의 배포를 지원하고 Zulu OpenJDK, Eclipse Temurin 및 Adopt OpenJDK를 기본적으로 지원합니다. v1은 Zulu OpenJDK만 지원합니다.
 jobs: # 어떤 임무를 가졌는지 적기
   build: # 첫번째 임무  # 이름을 마음대로 적어도됨.
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-18.04 # 버전 안 적으면 무조건 최신 버전으로 받는다.
     steps:  
       - name: Checkout # 브랜치를 내부적으로 Checkout 하는데 dockerf를 알면 편하다. 
         uses: actions/checkout@v2 # 브랜치 checkout 할 때 환경이 다른데 순간이동 하는 것이다.
@@ -34,7 +34,7 @@ jobs: # 어떤 임무를 가졌는지 적기
         shell: bash
 
       # EB에 CD 하기 위해 추가 작성
-      # 밑에는 주석처리
+      # 밑에는 주석처
       # - name: Generate deployment package 
       #   run: |
       #     mkdir -p deploy 
